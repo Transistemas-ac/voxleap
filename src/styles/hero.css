@@ -17,17 +17,33 @@
   letter-spacing: -0.025em;
   line-height: 1.06;
   margin: 0 0 24px;
+  animation: heroRise 0.9s ease-out both;
+  animation-delay: 0.15s;
 }
 .hero p {
   font-size: 19px;
   color: var(--gray-1);
   margin: 0 0 40px;
+  animation: heroRise 0.9s ease-out both;
+  animation-delay: 0.35s;
 }
 .hero-actions {
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  animation: heroRise 0.9s ease-out both;
+  animation-delay: 0.55s;
+}
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 520px) {

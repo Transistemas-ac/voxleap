@@ -93,91 +93,89 @@ section {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  background: radial-gradient(
+      120% 80% at 85% -10%,
+      rgba(176, 114, 242, 0.22) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      90% 60% at -10% 110%,
+      rgba(51, 145, 242, 0.14) 0%,
+      transparent 60%
+    );
 }
 .rays::before,
 .rays::after {
   content: "";
   position: absolute;
-  inset: -25% -15%;
+  inset: -30% -20%;
 }
 .rays::before {
   background: linear-gradient(
-      112deg,
-      transparent 18%,
-      rgba(176, 114, 242, 0.42) 24%,
-      rgba(126, 196, 255, 0.5) 27%,
-      transparent 30%
+      111deg,
+      transparent 26%,
+      rgba(176, 114, 242, 0.32) 32%,
+      rgba(122, 69, 212, 0.24) 38%,
+      transparent 45%
     ),
     linear-gradient(
-      112deg,
-      transparent 34%,
-      rgba(51, 145, 242, 0.38) 40%,
-      rgba(176, 114, 242, 0.42) 43%,
-      transparent 47%
+      116deg,
+      transparent 40%,
+      rgba(51, 145, 242, 0.28) 46%,
+      rgba(176, 114, 242, 0.36) 50%,
+      transparent 55%
     ),
     linear-gradient(
-      112deg,
-      transparent 52%,
-      rgba(176, 114, 242, 0.34) 57%,
-      rgba(126, 196, 255, 0.4) 60%,
-      transparent 64%
+      108deg,
+      transparent 56%,
+      rgba(176, 114, 242, 0.24) 62%,
+      rgba(126, 196, 255, 0.2) 66%,
+      transparent 72%
     ),
     linear-gradient(
-      112deg,
-      transparent 68%,
-      rgba(21, 79, 196, 0.35) 72%,
-      rgba(176, 114, 242, 0.36) 75%,
-      transparent 79%
+      114deg,
+      transparent 74%,
+      rgba(122, 69, 212, 0.28) 79%,
+      transparent 85%
     ),
     linear-gradient(
-      112deg,
-      transparent 82%,
-      rgba(126, 196, 255, 0.3) 86%,
-      transparent 90%
-    ),
-    linear-gradient(
-      112deg,
-      transparent 91%,
-      rgba(176, 114, 242, 0.3) 94%,
-      transparent 97%
+      110deg,
+      transparent 86%,
+      rgba(176, 114, 242, 0.2) 91%,
+      transparent 96%
     );
-  filter: blur(9px);
+  filter: blur(26px);
   will-change: transform;
   animation: rayDrift 14s ease-in-out infinite alternate;
 }
 .rays::after {
   background: linear-gradient(
-      112deg,
-      transparent 19%,
-      rgba(255, 255, 255, 0.14) 22%,
-      rgba(126, 196, 255, 0.45) 24%,
-      transparent 27%
+      111deg,
+      transparent 27%,
+      rgba(255, 255, 255, 0.08) 31%,
+      rgba(255, 255, 255, 0.28) 33%,
+      rgba(126, 196, 255, 0.5) 35%,
+      rgba(255, 255, 255, 0.2) 37%,
+      transparent 40%
     ),
     linear-gradient(
-      112deg,
-      transparent 35%,
-      rgba(176, 114, 242, 0.3) 39%,
-      rgba(255, 255, 255, 0.16) 41%,
-      transparent 44%
+      116deg,
+      transparent 43%,
+      rgba(176, 114, 242, 0.32) 47%,
+      rgba(255, 255, 255, 0.16) 49%,
+      transparent 52%
     ),
     linear-gradient(
-      112deg,
-      transparent 53%,
-      rgba(126, 196, 255, 0.38) 56%,
-      rgba(255, 255, 255, 0.12) 58%,
-      transparent 61%
+      108deg,
+      transparent 58%,
+      rgba(126, 196, 255, 0.28) 62%,
+      transparent 66%
     ),
     linear-gradient(
-      112deg,
-      transparent 69%,
-      rgba(176, 114, 242, 0.28) 72%,
-      transparent 76%
-    ),
-    linear-gradient(
-      112deg,
-      transparent 83%,
-      rgba(126, 196, 255, 0.3) 86%,
-      transparent 89%
+      114deg,
+      transparent 76%,
+      rgba(176, 114, 242, 0.2) 80%,
+      transparent 84%
     );
   filter: blur(1px);
   will-change: transform;
@@ -188,7 +186,7 @@ section {
     transform: translateX(0) scale(1);
   }
   to {
-    transform: translateX(-8%) scale(1.06);
+    transform: translateX(-5%) scale(1.03);
   }
 }
 .rays.fade-left::before,
