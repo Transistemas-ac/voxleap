@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">VoxLeap</h1>
 
-## Getting Started
+<p align="center">🇪🇸 Español - <a href="README.en.md">🇬🇧 English</a></p>
 
-First, run the development server:
+<p align="center">Estudio global de coaching de comunicación en inglés</p>
+
+---
+
+**VoxLeap** es el sitio web de un estudio de coaching de comunicación que ayuda a profesionales a desarrollar sus habilidades en inglés a través de conversaciones que importan. Incluye una landing editorial y un test de nivel de inglés interactivo para profesionales técnicos.
+
+## ✨ Características
+
+**Landing (`/`)**
+- Hero con haces de luz orgánicos animados (negro, blanco y violeta).
+- Franja de clientes con logos monocromáticos (Microsoft, LVMH, Iron Mountain, Grey, YPF, entre otros).
+- Manifiesto con frases que se iluminan al hacer scroll.
+- Sección de programas: 1:1 Coaching, Corporate Groups, Global Architects y MAIA Bootcamp.
+- Sección founder con retrato en blanco y negro sobre panel violeta.
+
+**English Level Check (`/maia`)**
+- 20 preguntas de gramática, lectura y listening + respuesta abierta de escritura.
+- Audio con control de velocidad (0.75× / 1× / 1.25×).
+- Barra de progreso y puntaje automático con niveles CEFR (A1 → C2).
+- Pantalla de resultado con call to action y compartir en LinkedIn / WhatsApp.
+- Envío de respuestas por email vía FormSubmit, con consentimiento de privacidad obligatorio.
+
+**Calidad**
+- SEO completo: metadata Open Graph/Twitter, `sitemap.xml`, `robots.txt`, imagen OG generada y JSON-LD.
+- Accesibilidad: skip link, ARIA (radiogroups, progressbar, alertas), contraste AA y soporte de `prefers-reduced-motion`.
+- Rendimiento: imágenes WebP optimizadas, logos inline (sin requests extra) y audio comprimido.
+- Páginas legales: `/privacy` y `/terms`.
+- Security headers configurados en `next.config.ts`.
+
+## 🛠️ Stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack) + React 19
+- TypeScript
+- CSS por secciones (`src/styles/`) + CSS Module para MAIA
+- Fuente Inter auto-alojada vía `next/font`
+
+## 🚀 Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install    # instalar dependencias
+pnpm dev        # servidor de desarrollo
+pnpm build      # build de producción
+pnpm start      # servidor de producción
+pnpm lint       # eslint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── maia/          # Test English Level Check (client component + CSS Module)
+│   ├── privacy/       # Política de privacidad
+│   ├── terms/         # Términos de servicio
+│   ├── layout.tsx     # Root layout, metadata y JSON-LD
+│   ├── page.tsx       # Landing
+│   ├── opengraph-image.tsx
+│   ├── robots.ts
+│   └── sitemap.ts
+├── components/        # header, scroll-reveal, maia-test, brand-marks
+└── styles/            # CSS global por sección
+public/
+└── logos/             # SVGs de marcas
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 Rutas
 
-## Learn More
+| Ruta      | Contenido                             |
+| --------- | ------------------------------------- |
+| `/`       | Landing principal                     |
+| `/maia`   | Test de nivel de inglés técnico       |
+| `/privacy`| Política de privacidad                |
+| `/terms`  | Términos de servicio                  |
 
-To learn more about Next.js, take a look at the following resources:
+> **Nota:** el dominio `https://voxleap.com` usado en metadata, sitemap y robots es un placeholder; reemplazalo por el dominio real antes de publicar.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Licencia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Uso privado. Contacto: sandovalmatiasezequiel@gmail.com

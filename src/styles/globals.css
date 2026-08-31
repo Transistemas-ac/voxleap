@@ -1,0 +1,256 @@
+:root {
+  --bg: #06070c;
+  --bg-panel: #0a0c14;
+  --card: #0b0d15;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --cyan: #34e3e3;
+  --cyan-dim: #1fb3b3;
+  --blue-deep: #08154a;
+  --blue-mid: #154fc4;
+  --blue-bright: #3391f2;
+  --blue-light: #7ec4ff;
+  --purple: #b072f2;
+  --white: #f6f7f9;
+  --gray-1: #b7bcc6;
+  --gray-2: #868c99;
+  --gray-3: #7a8190;
+  --radius: 14px;
+  --maxw: 1180px;
+  --font: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+img,
+svg {
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+section {
+  position: relative;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 500;
+  background: var(--white);
+  color: #0a0a0f;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- shared: organic light beams ---------- */
+.rays {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.rays::before,
+.rays::after {
+  content: "";
+  position: absolute;
+  inset: -25% -15%;
+}
+.rays::before {
+  background: linear-gradient(
+      112deg,
+      transparent 18%,
+      rgba(176, 114, 242, 0.42) 24%,
+      rgba(126, 196, 255, 0.5) 27%,
+      transparent 30%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 34%,
+      rgba(51, 145, 242, 0.38) 40%,
+      rgba(176, 114, 242, 0.42) 43%,
+      transparent 47%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 52%,
+      rgba(176, 114, 242, 0.34) 57%,
+      rgba(126, 196, 255, 0.4) 60%,
+      transparent 64%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 68%,
+      rgba(21, 79, 196, 0.35) 72%,
+      rgba(176, 114, 242, 0.36) 75%,
+      transparent 79%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 82%,
+      rgba(126, 196, 255, 0.3) 86%,
+      transparent 90%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 91%,
+      rgba(176, 114, 242, 0.3) 94%,
+      transparent 97%
+    );
+  filter: blur(9px);
+  will-change: transform;
+  animation: rayDrift 14s ease-in-out infinite alternate;
+}
+.rays::after {
+  background: linear-gradient(
+      112deg,
+      transparent 19%,
+      rgba(255, 255, 255, 0.14) 22%,
+      rgba(126, 196, 255, 0.45) 24%,
+      transparent 27%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 35%,
+      rgba(176, 114, 242, 0.3) 39%,
+      rgba(255, 255, 255, 0.16) 41%,
+      transparent 44%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 53%,
+      rgba(126, 196, 255, 0.38) 56%,
+      rgba(255, 255, 255, 0.12) 58%,
+      transparent 61%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 69%,
+      rgba(176, 114, 242, 0.28) 72%,
+      transparent 76%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 83%,
+      rgba(126, 196, 255, 0.3) 86%,
+      transparent 89%
+    );
+  filter: blur(1px);
+  will-change: transform;
+  animation: rayDrift 18s ease-in-out infinite alternate-reverse;
+}
+@keyframes rayDrift {
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(-8%) scale(1.06);
+  }
+}
+.rays.fade-left::before,
+.rays.fade-left::after {
+  -webkit-mask-image: linear-gradient(to left, #000 55%, transparent 92%);
+  mask-image: linear-gradient(to left, #000 55%, transparent 92%);
+}
+
+/* ---------- shared: eyebrow + buttons ---------- */
+.eyebrow {
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 14px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn-light {
+  background: var(--white);
+  color: #0a0a0f;
+}
+.btn-light:hover {
+  background: #dfe2e8;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn-cyan {
+  background: var(--cyan);
+  color: #04211f;
+}
+.btn-cyan:hover {
+  background: #54edea;
+}
+.btn-small {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    padding: 0 20px;
+  }
+}
