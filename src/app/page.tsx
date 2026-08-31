@@ -57,20 +57,28 @@ export default function Home() {
           <p className="trusted-label">Trusted by professionals from</p>
           <ul className="logos">
             <li>
-              <MicrosoftMark className="logo-img logo-img-monochrome" />
+              <MicrosoftMark className="logo-img logo-img-white" />
             </li>
-            <li className="logo-text">Lumina Americas</li>
             <li>
               <Image
-                src="/logos/tec.svg"
-                alt="Grupo Tec"
-                width={33}
-                height={22}
+                src="/logos/lumina.svg"
+                alt="Lumina Americas"
+                width={30}
+                height={30}
                 className="logo-img logo-img-white"
               />
             </li>
             <li>
-              <LvmhMark className="logo-img logo-img-monochrome" />
+              <Image
+                src="/logos/tec.svg"
+                alt="Grupo Tec"
+                width={59}
+                height={30}
+                className="logo-img logo-img-white"
+              />
+            </li>
+            <li>
+              <LvmhMark className="logo-img logo-img-white" />
             </li>
             <li>
               <Image
@@ -82,18 +90,26 @@ export default function Home() {
               />
             </li>
             <li>
-              <GreyMark className="logo-img logo-img-monochrome" />
+              <GreyMark className="logo-img logo-img-white" />
             </li>
             <li>
               <Image
                 src="/logos/ypf.svg"
                 alt="YPF"
-                width={98}
-                height={22}
+                width={118}
+                height={30}
                 className="logo-img logo-img-white"
               />
             </li>
-            <li className="logo-text">PYMNTS</li>
+            <li>
+              <Image
+                src="/logos/pymnts.svg"
+                alt="PYMNTS"
+                width={145}
+                height={30}
+                className="logo-img logo-img-white"
+              />
+            </li>
           </ul>
         </div>
 

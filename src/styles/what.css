@@ -25,12 +25,7 @@
 .logos li {
   display: flex;
   align-items: center;
-}
-.logos li:nth-child(odd) {
-  opacity: 0.55;
-}
-.logos li:nth-child(even) {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 .logos .logo-text {
   font-size: 21px;
@@ -43,8 +38,14 @@
   width: auto;
   flex: none;
 }
-.logos .logo-img-monochrome {
-  filter: brightness(0) invert(1);
+.logos .logo-img path,
+.logos .logo-img rect,
+.logos .logo-img circle,
+.logos .logo-img ellipse,
+.logos .logo-img polyline,
+.logos .logo-img polygon,
+.logos .logo-img line {
+  fill: #ffffff;
 }
 .logos .logo-img-white {
   filter: none;
